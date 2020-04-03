@@ -4734,7 +4734,7 @@ def RunStandardAndPracticeSession(CurrentSessNoFromArgs):
                     if (ThisSess_ShowPlateSpeed):
                         DisplaySpeed(ReturnSpeedValue, SM_Red_Med, 'PLATE SP')
                         time.sleep(1)
-                    if (ThisSess_ShowReleaseSpeed and int(ThisSess_ReleaseSpeedAddon) > 0 and int(ThisSess_ReleaseSpeedAddon) < 10:
+                    if (ThisSess_ShowReleaseSpeed and int(ThisSess_ReleaseSpeedAddon) > 0 and int(ThisSess_ReleaseSpeedAddon) < 10):
                             DisplaySpeed(ReturnSpeedValue + int(ThisSess_ReleaseSpeedAddon), SM_Blue_Med,  '+RELEASE')
                             time.sleep(ThisSess_DisplaySpeedSecs)
 
