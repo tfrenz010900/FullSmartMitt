@@ -264,6 +264,10 @@ SuccessCount = 0
 MissCount = 0
 NoPitchCount = 0
 
+ThisSess_TimeToShowPlaySpeed = 0
+ThisSess_TimeToShowReleaseSpeed = 0
+ThisSess_ShowResults = True
+
 ThisSess_MachineId = ''
 ThisSess_AccountId = ''
 ThisSess_SeqNumber = ''
@@ -275,7 +279,7 @@ ThisSess_PracticeGuid = ''
 ThisSess_GameLineUpGuid = ''
 ThisSess_ArcadeGuid = ''
 ThisSess_BallType = ''
-ThisSess_DisplaySpeedSecs = 0
+ThisSess_DisplaySpeedSecs = ThisSess_TimeToShowPlaySpeed
 ThisSess_DisplayImpactSecs = 0
 ThisSess_SuspendTimeOutSeconds_ReallyMINUTES = 15
 ThisSess_DisplayRiverYN = 'N'  # Y = yes, N = no
@@ -3132,7 +3136,7 @@ def WriteOnePitchToLocalPitchTable():
 
 
 # 11/30/18 htc added ThisSess_ReleaseSpeedAddon and speed acquisition method notes to pitch record.
-    if int(ThisSess_ReleaseSpeedAddon) > 0:
+    if int(ThisSess_ReleaseSpeedAddon) > 0 and ThisSess_TimeToShowReleaseSpeed != 0:
         CurrPitch_ReleaseSpeedMPH = CurrPitch_PlateSpeedMPH + int(ThisSess_ReleaseSpeedAddon)
     else:
         CurrPitch_ReleaseSpeedMPH = 0
@@ -5004,7 +5008,9 @@ def RunStandardAndPracticeSession(CurrentSessNoFromArgs):
 
                         SuccessCount = SuccessCount + 1
 
-                        MarqueeWord('SUCCESS', SM_Green)
+                        if ThisSess_ShowResults:
+                            MarqueeWord('SUCCESS', SM_Green)
+
                         CurrPitch_Call = 'SUCCESS'
                     else:
 
@@ -5015,7 +5021,9 @@ def RunStandardAndPracticeSession(CurrentSessNoFromArgs):
 
                         MissCount = MissCount + 1
 
-                        MarqueeWord('- MISS -', SM_Red)
+                        if ThisSess_ShowResults:
+                            MarqueeWord('- MISS -', SM_Red)
+
                         CurrPitch_Call = 'MISS'
 
                     if ThisSess_DisplayImpactSecs > 0:
