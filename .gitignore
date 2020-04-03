@@ -1,1 +1,5 @@
 .DS_Store
+students/LastSession.out
+students/PitchSessionFiles/MainLog*
+students/PitchSessionFiles/LastSession.out
+students/PitchSessionFiles/SM*
