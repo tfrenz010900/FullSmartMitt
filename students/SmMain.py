@@ -264,8 +264,8 @@ SuccessCount = 0
 MissCount = 0
 NoPitchCount = 0
 
-ThisSess_TimeToShowPlaySpeed = 0
-ThisSess_TimeToShowReleaseSpeed = 0
+ThisSess_ShowPlateSpeed = True
+ThisSess_ShowReleaseSpeed = True
 ThisSess_ShowResults = True
 
 ThisSess_MachineId = ''
@@ -279,7 +279,7 @@ ThisSess_PracticeGuid = ''
 ThisSess_GameLineUpGuid = ''
 ThisSess_ArcadeGuid = ''
 ThisSess_BallType = ''
-ThisSess_DisplaySpeedSecs = ThisSess_TimeToShowPlaySpeed
+ThisSess_DisplaySpeedSecs = 0
 ThisSess_DisplayImpactSecs = 0
 ThisSess_SuspendTimeOutSeconds_ReallyMINUTES = 15
 ThisSess_DisplayRiverYN = 'N'  # Y = yes, N = no
@@ -3136,7 +3136,7 @@ def WriteOnePitchToLocalPitchTable():
 
 
 # 11/30/18 htc added ThisSess_ReleaseSpeedAddon and speed acquisition method notes to pitch record.
-    if int(ThisSess_ReleaseSpeedAddon) > 0 and ThisSess_TimeToShowReleaseSpeed != 0:
+    if int(ThisSess_ReleaseSpeedAddon) > 0:
         CurrPitch_ReleaseSpeedMPH = CurrPitch_PlateSpeedMPH + int(ThisSess_ReleaseSpeedAddon)
     else:
         CurrPitch_ReleaseSpeedMPH = 0
@@ -4726,30 +4726,17 @@ def RunStandardAndPracticeSession(CurrentSessNoFromArgs):
             if ReturnSpeedValue > 10 and ReturnSpeedValue < 110:
 
                 if ThisSess_DisplaySpeedSecs > 0:
-
- # 11/30/18 htc moved to inside DisplaySpeed routine                   MarqueeWord('PLATE SP', '')
-
- #12/05/18 htc - ThisSess_ReleaseSpeedValue had "NoneType" value ???  just forced it.
                     if ThisSess_ReleaseSpeedAddon == None:
                         ThisSess_ReleaseSpeedAddon = 0
-
-                    if str(ThisSess_ReleaseSpeedAddon) == '':
+                    elif str(ThisSess_ReleaseSpeedAddon) == '':
                         ThisSess_ReleaseSpeedAddon = 0
 
-
-                    if int(ThisSess_ReleaseSpeedAddon) > 0 and int(ThisSess_ReleaseSpeedAddon) < 10:
-
+                    if (ThisSess_ShowPlateSpeed):
                         DisplaySpeed(ReturnSpeedValue, SM_Red_Med, 'PLATE SP')
-# 12/15/19 htc                        time.sleep(ThisSess_DisplaySpeedSecs)
                         time.sleep(1)
-
-
-                        DisplaySpeed(ReturnSpeedValue + int(ThisSess_ReleaseSpeedAddon), SM_Blue_Med,  '+RELEASE')
-                        time.sleep(ThisSess_DisplaySpeedSecs)
-
-                    else:
-
-                        DisplaySpeed(ReturnSpeedValue, SM_Red_Med, 'PLATE SP')
+                    if (ThisSess_ShowReleaseSpeed and int(ThisSess_ReleaseSpeedAddon) > 0 and int(ThisSess_ReleaseSpeedAddon) < 10:
+                            DisplaySpeed(ReturnSpeedValue + int(ThisSess_ReleaseSpeedAddon), SM_Blue_Med,  '+RELEASE')
+                            time.sleep(ThisSess_DisplaySpeedSecs)
 
 
                 strXcoord = ''
