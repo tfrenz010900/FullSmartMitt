@@ -708,7 +708,7 @@ def YevalNetLocPctCoordsV1(intPctOfYrow):
     global gintFinalImpactSMgridY
     gintFinalImpactSMgridY = 0
 
-    WriteLogFile('intPctOfYrow: ' + intPctOfYrow, 'YevalNetLocPctCoordsV1')
+    WriteLogFile('intPctOfYrow: ' + str(intPctOfYrow), 'YevalNetLocPctCoordsV1')
 #08/12/19 - htc - also changed 99 to 100 in the if statement below.
 #    if intPctOfYrow < 1 or intPctOfYrow > 99:
 
@@ -766,7 +766,7 @@ def YevalNetLocPctCoordsV1(intPctOfYrow):
         gintFinalImpactSMgridY= 26
 
     
-    WriteLogFile('gintFinalImpactSMgridY: ' + gintFinalImpactSMgridY, 'YevalNetLocPctCoordsV1')
+    WriteLogFile('gintFinalImpactSMgridY: ' + str(gintFinalImpactSMgridY), 'YevalNetLocPctCoordsV1')
     return gintFinalImpactSMgridY
 
 
@@ -902,7 +902,7 @@ def XevalNetLocPctCoordsV1(intPctOfXcol):
 
     gintFinalImpactSMgridX = 0
     gstrFinalImpactSMgridX = ''
-    WriteLogFile('intPctOfXcol: ' + intPctOfXcol, 'XevalNetLocPctCoordsV1')
+    WriteLogFile('intPctOfXcol: ' + str(intPctOfXcol), 'XevalNetLocPctCoordsV1')
 #8/12/19 htc changed 99 to 100 below like above in the "X" axis logic.
 
     if intPctOfXcol < gdblStartB:
@@ -984,7 +984,7 @@ def XevalNetLocPctCoordsV1(intPctOfXcol):
         gintFinalImpactSMgridX = 26
         gstrFinalImpactSMgridX = 'Z'
 
-    WriteLogFile('gstrFinalImpactSMgridX: ' + gstrFinalImpactSMgridX, 'XevalNetLocPctCoordsV1')
+    WriteLogFile('gstrFinalImpactSMgridX: ' + str(gstrFinalImpactSMgridX), 'XevalNetLocPctCoordsV1')
     return gstrFinalImpactSMgridX
 
 
