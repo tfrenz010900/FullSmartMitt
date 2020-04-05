@@ -95,7 +95,7 @@ global smMainVersion
 # 9/19/19 htc smMainVersion = 'VER-2.03'
 # 9/20/19 htc smMainVersion = 'VER-2.04'
 #smMainVersion = 'VER-2.07wsForecMinus2Vertical'
-smMainVersion = 'VER-2.08'
+smMainVersion = 'VER-3.00'
 
 
 
@@ -161,7 +161,7 @@ global ImpactLocatorHomeFolder
 global gintFinalImpactSMgridY
 global gintFinalImpactSMgridX
 global gstrFinalImpactSMgridX
-global ThisSess_ShutdownMode
+ThisSess_ShutdownMode = 'NONE'
 
 
 
@@ -287,7 +287,6 @@ ThisSess_DisplayPitchCountBarsYN = 'Y'
 ThisSess_YdeltaPlusMinus3 = 0
 ThisSess_PitchingDistanceFeet = 0
 ThisSess_SystemOnLineYN = 'N'
-ThisSess_ShutdownMode = 'NONE'
 ThisSess_StudentDisplayName = '--------'
 ThisSess_RepetitionCountLimit = 1
 ThisSess_CurrentRepCount = 0
@@ -616,13 +615,7 @@ def YevalNetLocPctCoordsV1(intPctOfYrow):
 
     bolUseOriginal = False
     bolUseCustom1 = False
-
-
-
     bolUseCustom2 = True
-
-
-
 
     if bolUseCustom1:    #10/25/18 htc - "custom" with TRF 1st try Summer 2018.
         WriteLogFile('Using CUSTOM-ONE Values for Y translation of Ozan % of net to Row (1-26) :', '6543-YevalNetLocPctCoordsV1          -')
@@ -685,7 +678,6 @@ def YevalNetLocPctCoordsV1(intPctOfYrow):
 
     if bolUseOriginal:      #From AIO Feb'18
         WriteLogFile('Using ORIGINAL (A.I.O.) Values for Y translation of Ozan % of net to Row (1-26) :', '6543-YevalNetLocPctCoordsV1          -')
-        gdblStart1 = 0
         gdblStart2 = 0
         gdblStart3 = 0
         gdblStart4 = 0
@@ -716,127 +708,67 @@ def YevalNetLocPctCoordsV1(intPctOfYrow):
     global gintFinalImpactSMgridY
     gintFinalImpactSMgridY = 0
 
-
+    WriteLogFile('intPctOfYrow: ' + intPctOfYrow, 'YevalNetLocPctCoordsV1')
 #08/12/19 - htc - also changed 99 to 100 in the if statement below.
 #    if intPctOfYrow < 1 or intPctOfYrow > 99:
-    if intPctOfYrow < 1 or intPctOfYrow > 100:
-        return (102)
 
     if intPctOfYrow < gdblStart2:
         gintFinalImpactSMgridY = 1
-        return(gintFinalImpactSMgridY)
-
-    if intPctOfYrow < gdblStart3:
+    elif intPctOfYrow < gdblStart3:
         gintFinalImpactSMgridY = 2
-        return(gintFinalImpactSMgridY)
-
-    if intPctOfYrow < gdblStart4:
+    elif intPctOfYrow < gdblStart4:
         gintFinalImpactSMgridY = 3
-        return(gintFinalImpactSMgridY)
-
-    if intPctOfYrow < gdblStart5:
+    elif intPctOfYrow < gdblStart5:
         gintFinalImpactSMgridY = 4
-        return(gintFinalImpactSMgridY)
-
-    if intPctOfYrow < gdblStart6:
+    elif intPctOfYrow < gdblStart6:
         gintFinalImpactSMgridY = 5
-        return(gintFinalImpactSMgridY)
-
-    if intPctOfYrow < gdblStart7:
+    elif intPctOfYrow < gdblStart7:
         gintFinalImpactSMgridY = 6
-        return(gintFinalImpactSMgridY)
-
-    if intPctOfYrow < gdblStart8:
+    elif intPctOfYrow < gdblStart8:
         gintFinalImpactSMgridY = 7
-        return(gintFinalImpactSMgridY)
-
-    if intPctOfYrow < gdblStart9:
+    elif intPctOfYrow < gdblStart9:
         gintFinalImpactSMgridY = 8
-        return(gintFinalImpactSMgridY)
-
-    if intPctOfYrow < gdblStart10:
+    elif intPctOfYrow < gdblStart10:
         gintFinalImpactSMgridY = 9
-        return(gintFinalImpactSMgridY)
-
-    if intPctOfYrow < gdblStart11:
+    elif intPctOfYrow < gdblStart11:
         gintFinalImpactSMgridY = 10
-        return(gintFinalImpactSMgridY)
-
-    if intPctOfYrow < gdblStart12:
+    elif intPctOfYrow < gdblStart12:
         gintFinalImpactSMgridY = 11
-        return(gintFinalImpactSMgridY)
-
-    if intPctOfYrow < gdblStart13:
+    elif intPctOfYrow < gdblStart13:
         gintFinalImpactSMgridY = 12
-        return(gintFinalImpactSMgridY)
-
-    if intPctOfYrow < gdblStart14:
+    elif intPctOfYrow < gdblStart14:
         gintFinalImpactSMgridY = 13
-        return(gintFinalImpactSMgridY)
-
-    if intPctOfYrow < gdblStart15:
+    elif intPctOfYrow < gdblStart15:
         gintFinalImpactSMgridY = 14
-        return(gintFinalImpactSMgridY)
-
-    if intPctOfYrow < gdblStart16:
+    elif intPctOfYrow < gdblStart16:
         gintFinalImpactSMgridY = 15
-        return(gintFinalImpactSMgridY)
-
-    if intPctOfYrow < gdblStart17:
+    elif intPctOfYrow < gdblStart17:
         gintFinalImpactSMgridY = 16
-        return(gintFinalImpactSMgridY)
-
-    if intPctOfYrow < gdblStart18:
+    elif intPctOfYrow < gdblStart18:
         gintFinalImpactSMgridY = 17
-        return(gintFinalImpactSMgridY)
-
-    if intPctOfYrow < gdblStart19:
+    elif intPctOfYrow < gdblStart19:
         gintFinalImpactSMgridY = 18
-        return(gintFinalImpactSMgridY)
-
-    if intPctOfYrow < gdblStart20:
+    elif intPctOfYrow < gdblStart20:
         gintFinalImpactSMgridY = 19
-        return(gintFinalImpactSMgridY)
-
-    if intPctOfYrow < gdblStart21:
+    elif intPctOfYrow < gdblStart21:
         gintFinalImpactSMgridY = 20
-        return(gintFinalImpactSMgridY)
-
-    if intPctOfYrow < gdblStart22:
+    elif intPctOfYrow < gdblStart22:
         gintFinalImpactSMgridY = 21
-        return(gintFinalImpactSMgridY)
-
-    if intPctOfYrow < gdblStart23:
+    elif intPctOfYrow < gdblStart23:
         gintFinalImpactSMgridY = 22
-        return(gintFinalImpactSMgridY)
-
-    if intPctOfYrow < gdblStart24:
+    elif intPctOfYrow < gdblStart24:
         gintFinalImpactSMgridY = 23
-        return(gintFinalImpactSMgridY)
-
-    if intPctOfYrow < gdblStart25:
+    elif intPctOfYrow < gdblStart25:
         gintFinalImpactSMgridY = 24
-        return(gintFinalImpactSMgridY)
-
-    if intPctOfYrow < gdblStart26:
+    elif intPctOfYrow < gdblStart26:
         gintFinalImpactSMgridY = 25
-        return(gintFinalImpactSMgridY)
+    else:
+        gintFinalImpactSMgridY= 26
 
-    gintFinalImpactSMgridY= 26
+    
+    WriteLogFile('gintFinalImpactSMgridY: ' + gintFinalImpactSMgridY, 'YevalNetLocPctCoordsV1')
+    return gintFinalImpactSMgridY
 
-
-
-
-# 10/27/19 htc - attempt to fix "+2+2" error.
-
-    if gintFinalImpactSMgridY >= 3:
-        gintFinalImpactSMgridY = gintFinalImpactSMgridY - 2
-
-
-
-
-
-    return(gintFinalImpactSMgridY)
 
 
 def XevalNetLocPctCoordsV1(intPctOfXcol):
@@ -847,29 +779,11 @@ def XevalNetLocPctCoordsV1(intPctOfXcol):
 
  # 10/03/18 htc - moved logging down to where called from.   WriteLogFile('Translate X - Horizontal rt/lft value- Ozans IMPACT percentage = ' + str(intPctOfXcol), '0101-Evaluate Ozans Pct to X-Y Coords -')
 
-    bolUseCustom = True
-
- #'2/11/18 htc - setup Translation from % of X,Y as % of net size (56"x44").
- # NOT USED 9/15/18 htc    gdblStartA = 0
-
     bolUseOriginal = False
     bolUseCustom1 = False
-
-
-# 10/9/19 htc setup custom table to fix "Toms +2 bug -horizontally "X" axis
- #
- #  bolUseCustom2 = True
-
-
     bolUseCustom2 = False
     bolUseCustom2 = True
-
     bolUseTRF = False
-
-
-
-
-
 
     if bolUseTRF:  # 10/08/19 htc
         WriteLogFile('Using bolUseTRF 10/09/19 htc Values for X translation of Ozan % of net to Columns (A-Z) :','6521-XevalNetLocPctCoordsV1          -')
@@ -899,12 +813,7 @@ def XevalNetLocPctCoordsV1(intPctOfXcol):
         gdblStartY = 96  #custom 2 value 87
         gdblStartZ = 100  #custom 2 value 100
 
-
-
-
-
-
-    if bolUseCustom1:  # 10/25/18 htc - "custom" with TRF 1st try Summer 2018.
+    elif bolUseCustom1:  # 10/25/18 htc - "custom" with TRF 1st try Summer 2018.
         WriteLogFile('Using CUSTOM-ONE Values for X translation of Ozan % of net to Columns (A-Z) :','6521-XevalNetLocPctCoordsV1          -')
         gdblStartB = 5
         gdblStartC = 10
@@ -932,7 +841,7 @@ def XevalNetLocPctCoordsV1(intPctOfXcol):
         gdblStartY = 90
         gdblStartZ = 100
 
-    if bolUseCustom2:  # 10/24/18 htc - TRF at 2228 threw for hr or two and came up with these.
+    elif bolUseCustom2:  # 10/24/18 htc - TRF at 2228 threw for hr or two and came up with these.
         WriteLogFile('Using CUSTOM-TWO Values for X translation of Ozan % of net to Columns (A-Z) :','6521-XevalNetLocPctCoordsV1          -')
         gdblStartB = 0
         gdblStartC = 5
@@ -959,11 +868,8 @@ def XevalNetLocPctCoordsV1(intPctOfXcol):
         gdblStartX = 84
         gdblStartY = 87
         gdblStartZ = 100
-
-
-    if bolUseOriginal:  # From AIO Feb'18
+    elif bolUseOriginal:  # From AIO Feb'18
         WriteLogFile('Using ORIGINAL (A.I.O.) Values for Y translation of Ozan % of net to Columns (A-Z) :', '6521-XevalNetLocPctCoordsV1          -')
-        gdblStartA = 0
         gdblStartB = 10
         gdblStartC = 15
         gdblStartD = 17
@@ -996,153 +902,90 @@ def XevalNetLocPctCoordsV1(intPctOfXcol):
 
     gintFinalImpactSMgridX = 0
     gstrFinalImpactSMgridX = ''
-
+    WriteLogFile('intPctOfXcol: ' + intPctOfXcol, 'XevalNetLocPctCoordsV1')
 #8/12/19 htc changed 99 to 100 below like above in the "X" axis logic.
-#    if intPctOfXcol < 1 or intPctOfXcol > 99:
-    if intPctOfXcol < 1 or intPctOfXcol > 100:
-        return(101)
 
     if intPctOfXcol < gdblStartB:
         gintFinalImpactSMgridX = 1
         gstrFinalImpactSMgridX = 'A'
-        return(gstrFinalImpactSMgridX)
-
-    if intPctOfXcol < gdblStartC:
+    elif intPctOfXcol < gdblStartC:
         gintFinalImpactSMgridX = 2
         gstrFinalImpactSMgridX = 'B'
-        return(gstrFinalImpactSMgridX)
-
-    if intPctOfXcol < gdblStartD:
+    elif intPctOfXcol < gdblStartD:
         gintFinalImpactSMgridX = 3
         gstrFinalImpactSMgridX = 'C'
-        return(gstrFinalImpactSMgridX)
-
-    if intPctOfXcol < gdblStartE:
+    elif intPctOfXcol < gdblStartE:
         gintFinalImpactSMgridX = 4
         gstrFinalImpactSMgridX = 'D'
-        return(gstrFinalImpactSMgridX)
-
-    if intPctOfXcol < gdblStartF:
+    elif intPctOfXcol < gdblStartF:
         gintFinalImpactSMgridX = 5
         gstrFinalImpactSMgridX = 'E'
-        return(gstrFinalImpactSMgridX)
-
-    if intPctOfXcol < gdblStartG:
+    elif intPctOfXcol < gdblStartG:
         gintFinalImpactSMgridX = 6
         gstrFinalImpactSMgridX = 'F'
-        return(gstrFinalImpactSMgridX)
-
-    if intPctOfXcol < gdblStartH:
+    elif intPctOfXcol < gdblStartH:
         gintFinalImpactSMgridX = 7
         gstrFinalImpactSMgridX = 'G'
-        return(gstrFinalImpactSMgridX)
-
-    if intPctOfXcol < gdblStartI:
+    elif intPctOfXcol < gdblStartI:
         gintFinalImpactSMgridX = 8
         gstrFinalImpactSMgridX = 'H'
-        return(gstrFinalImpactSMgridX)
-
-    if intPctOfXcol < gdblStartJ:
+    elif intPctOfXcol < gdblStartJ:
         gintFinalImpactSMgridX = 9
         gstrFinalImpactSMgridX = 'I'
-        return(gstrFinalImpactSMgridX)
-
-    if intPctOfXcol < gdblStartK:
+    elif intPctOfXcol < gdblStartK:
         gintFinalImpactSMgridX = 10
         gstrFinalImpactSMgridX = 'J'
-        return(gstrFinalImpactSMgridX)
-
-    if intPctOfXcol < gdblStartL:
+    elif intPctOfXcol < gdblStartL:
         gintFinalImpactSMgridX = 11
         gstrFinalImpactSMgridX = 'K'
-        return(gstrFinalImpactSMgridX)
-
-    if intPctOfXcol < gdblStartM:
+    elif intPctOfXcol < gdblStartM:
         gintFinalImpactSMgridX = 12
         gstrFinalImpactSMgridX = 'L'
-        return(gstrFinalImpactSMgridX)
-
-    if intPctOfXcol < gdblStartN:
+    elif intPctOfXcol < gdblStartN:
         gintFinalImpactSMgridX = 13
         gstrFinalImpactSMgridX = 'M'
-        return(gstrFinalImpactSMgridX)
-
-    if intPctOfXcol < gdblStartO:
+    elif intPctOfXcol < gdblStartO:
         gintFinalImpactSMgridX = 14
         gstrFinalImpactSMgridX = 'N'
-        return(gstrFinalImpactSMgridX)
-
-    if intPctOfXcol < gdblStartP:
+    elif intPctOfXcol < gdblStartP:
         gintFinalImpactSMgridX = 15
         gstrFinalImpactSMgridX = 'O'
-        return(gstrFinalImpactSMgridX)
-
-    if intPctOfXcol < gdblStartQ:
+    elif intPctOfXcol < gdblStartQ:
         gintFinalImpactSMgridX = 16
         gstrFinalImpactSMgridX = 'P'
-        return(gstrFinalImpactSMgridX)
-
-    if intPctOfXcol < gdblStartR:
+    elif intPctOfXcol < gdblStartR:
         gintFinalImpactSMgridX = 17
         gstrFinalImpactSMgridX = 'Q'
-        return(gstrFinalImpactSMgridX)
-
-    if intPctOfXcol < gdblStartS:
+    elif intPctOfXcol < gdblStartS:
         gintFinalImpactSMgridX = 18
         gstrFinalImpactSMgridX = 'R'
-        return(gstrFinalImpactSMgridX)
-
-    if intPctOfXcol < gdblStartT:
+    elif intPctOfXcol < gdblStartT:
         gintFinalImpactSMgridX = 19
         gstrFinalImpactSMgridX = 'S'
-        return(gstrFinalImpactSMgridX)
-
-    if intPctOfXcol < gdblStartU:
+    elif intPctOfXcol < gdblStartU:
         gintFinalImpactSMgridX = 20
         gstrFinalImpactSMgridX = 'T'
-        return(gstrFinalImpactSMgridX)
-
-    if intPctOfXcol < gdblStartV:
+    elif intPctOfXcol < gdblStartV:
         gintFinalImpactSMgridX = 21
         gstrFinalImpactSMgridX = 'U'
-        return(gstrFinalImpactSMgridX)
-
-    if intPctOfXcol < gdblStartW:
+    elif intPctOfXcol < gdblStartW:
         gintFinalImpactSMgridX = 22
         gstrFinalImpactSMgridX = 'V'
-        return(gstrFinalImpactSMgridX)
-
-    if intPctOfXcol < gdblStartX:
+    elif intPctOfXcol < gdblStartX:
         gintFinalImpactSMgridX = 23
         gstrFinalImpactSMgridX = 'W'
-        return(gstrFinalImpactSMgridX)
-
-    if intPctOfXcol < gdblStartY:
+    elif intPctOfXcol < gdblStartY:
         gintFinalImpactSMgridX = 24
         gstrFinalImpactSMgridX = 'X'
-        return(gstrFinalImpactSMgridX)
-
-    if intPctOfXcol < gdblStartZ:
+    elif intPctOfXcol < gdblStartZ:
         gintFinalImpactSMgridX = 25
         gstrFinalImpactSMgridX = 'Y'
-        return(gstrFinalImpactSMgridX)
+    else:
+        gintFinalImpactSMgridX = 26
+        gstrFinalImpactSMgridX = 'Z'
 
-    gintFinalImpactSMgridX = 26
-    gstrFinalImpactSMgridX = 'Z'
-
-
-
-
- # 10/27/19 htc - attempt to fix "+2+2" error.
-
-    if gintFinalImpactSMgridX >= 3:
-        gintFinalImpactSMgridX = gintFinalImpactSMgridX -2
-        gstrFinalImpactSMgridX = strX2int(gstrFinalImpactSMgridX)
-
-#10/27/19 htc - this isn't the right spot to do this correction - all the "if's" above RETURN direct value and end routine.
-
-
-    return(gstrFinalImpactSMgridX)
+    WriteLogFile('gstrFinalImpactSMgridX: ' + gstrFinalImpactSMgridX, 'XevalNetLocPctCoordsV1')
+    return gstrFinalImpactSMgridX
 
 
 def chunk(_iter, chunk_size):
@@ -3067,7 +2910,6 @@ def WriteOnePitchToLocalPitchTable():
     global ThisSess_YdeltaPlusMinus3
     global ThisSess_PitchingDistanceFeet
     global ThisSess_SystemOnLineYN
-    global ThisSess_ShutdownMode
     global ThisSess_StudentDisplayName
 
     global CurrPitch_PlateSpeedMPH
@@ -3339,13 +3181,9 @@ def DisplayImpactLocation(impactXnum, impactYnum):
 
 def WaitForSpeedFile(TimeOutValueToAbort):
 
-    global ThisSess_ShutdownMode
-
     StartTime = datetime.datetime.now()
     ExpireTime = StartTime + datetime.timedelta(seconds=TimeOutValueToAbort)
     CurrentTime = datetime.datetime.now()
-
-
 
 #9/19/19 htc - added fiellds to help debug time-out issues users are having per TRF.
     WriteLogFile('BEFORE while loop--  StartTime: [' + str(StartTime) + ']', '0271-WaitForSpeedFile(TimeOutValueToAbort)   -')
@@ -3805,13 +3643,7 @@ def CalculateMovementVer1():
     Z1Params = str(intU) + ', 0,' + str(70 - intV)
 
     # 1/3/19 htc Second Try "order"   Z1Params = str(intV) + ',-12.5,' + str(intU)
-
-
  #   Z1Params = str(intV) + ',-12.5,' + str(intU)
-
-
-
-
 
     tempXval = int(intPctOfXcol + (intQ *100)) + 1
     if tempXval > 98:
@@ -3828,42 +3660,17 @@ def CalculateMovementVer1():
     CurrPitch_ImpactYintZ1 = YevalNetLocPctCoordsV1(tempYval)
 
 
-
-
-
-
 #10/27/19 htc - Need to adjust these values too !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     # 10/27/19 htc - attempt to fix "+2+2" error.
 #    if gintFinalImpactSMgridX >= 3:
 #        gintFinalImpactSMgridX = gintFinalImpactSMgridX - 2
 #        gstrFinalImpactSMgridX = strX2int(gstrFinalImpactSMgridX)
-
-
-
-
-
-
-
-
-
  #############################################################  12/5/18 htc smoothing SUCKS !!   intermedCoordsA = str(intU) + ',-12.4,' + str(intV)
  #############################################################################################   intermedCoordsB = str(htcNetXinches) + ',-0.1,' + str(htcNetYinches)
 
-
-
-
-
-
     NetParams = str(htcNetXinches) + ',-12.5,' + str(70 - htcNetYinches)
 
-
 #    NetParams = str(htcNetYinches) + ',0,' + str(htcNetXinches)
-
-
-
-
-
-
 
     #12/05/18 htc - if "room" between coords/numbers, "spread" the 2 intemediate coord (A and B) as evenly as possible.
     if 'Smooth All Four Data Points' == 'dont run right now':
